@@ -37,6 +37,10 @@ class Article
     */
     public $content = null;
 
+    public $content50ch = null;
+
+    public $text = null;
+
     /**
      * Создаст объект статьи
      *
@@ -68,6 +72,9 @@ class Article
 
         if (isset($data['content'])) {
             $this->content = $data['content'];
+            $this->content50ch = mb_substr(strip_tags($data['content']),0,50) . '...';
+
+            $this->text = mb_strimwidth($data['content'], 0, 53, '...');
         }
     }
 

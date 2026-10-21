@@ -16,6 +16,7 @@ function initApplication()
 {
     $action = isset($_GET['action']) ? $_GET['action'] : "";
 
+    // echo '[' . $action . ']';
     switch ($action) {
         case 'archive':
             archive();
@@ -95,6 +96,9 @@ function homepage()
     foreach ($data['results'] as $category) {
         $results['categories'][$category->id] = $category;
     }
+    // echo "<pre>";
+    // print_r($results['categories']);
+    // echo "</pre>";
 
     $results['pageTitle'] = "Простая CMS на PHP";
 
@@ -104,5 +108,5 @@ function homepage()
 //    echo "</pre>";
 //    die();
 
-    require(CmsConfig::$template_path . "/homepage.php");
+    require(CmsConfig::$template_path . "/homepage.php"); // vkluchenie ehe one file 
 }
