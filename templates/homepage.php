@@ -27,7 +27,7 @@
                     </span>
                 <?php } ?>
             </h2>
-           <p class="summary"><?php echo htmlspecialchars($article->text)?></p>
+           <p class="summary"><?php echo htmlspecialchars($article->content50ch)?></p>
             <img id="loader-identity" src="JS/ajax-loader.gif" alt="gif">
             
             <ul class="ajax-load">

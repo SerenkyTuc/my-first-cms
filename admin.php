@@ -95,6 +95,9 @@ function newArticle()
         //            В $_POST данные о статье сохраняются корректно
         // Пользователь получает форму редактирования статьи: сохраняем новую статью
         $article = new Article();
+        if (!isset($_POST['active'])) {
+        $_POST['active'] = 0;
+        }
         $article->storeFormValues($_POST);
         //            echo "<pre>";
         //            print_r($article);
@@ -136,6 +139,9 @@ function editArticle()
             return;
         }
 
+        if (!isset($_POST['active'])) {
+        $_POST['active'] = 0;
+        }
         $article->storeFormValues($_POST);
         $article->update();
         header("Location: admin.php?status=changesSaved");
